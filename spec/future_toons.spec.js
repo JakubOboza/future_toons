@@ -21,6 +21,23 @@ describe('Future Toons', function(){
       new toons("./spec/fixtures/four_line.file", line_cb, end_cb);
 
     });
+
+    it("should emit correct content", function(done){
+      var content = ">";
+
+      var line_cb = function(line){
+        content = content + ":" + line;
+      };
+
+      var end_cb = function(){
+        done();
+        content.should.equal(">:first line:second line:third line:fourth line");
+      } 
+   
+      new toons("./spec/fixtures/four_line.file", line_cb, end_cb);
+
+    });
+
   });
 });
 
