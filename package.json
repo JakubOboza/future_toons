@@ -12,7 +12,7 @@
     "test": "mocha -R landing spec/*.spec.js"
   },
   "dependencies": {
-
+    "commander": ">= 0.6.0"
     },
   "devDependencies": {
     "should": ">= 0.6.3",

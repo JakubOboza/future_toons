@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander');
+var toons = require('../toons');
+
+program
+	.option("-f, --file [filename]", 'file to process')
+	.option("-e, --eval [function]", 'callback to eval')
+	.parse(process.argv)
+
+var callback = function(line){ console.log(line); };
+
+if(program.eval){
+	// dirty hack for now
+  callback = eval("callback = " + program.eval + ";");
+}
+
+if(program.file){
+  var out = new toons(program.file, callback);
+}else{
+	console.log("Please supply filename");
+}
