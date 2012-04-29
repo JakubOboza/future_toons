@@ -38,6 +38,26 @@ describe('Future Toons', function(){
 
     });
 
+    it("should be able to delay execution", function(done){
+
+      var count = 0;
+
+      var line_cb = function(line){
+        count = count + 1;
+      };
+
+      var end_cb = function(){
+        done();
+        count.should.equal(4);
+      } 
+
+      var streamer = new toons();
+      streamer.onLine(line_cb);
+      streamer.onEnd(end_cb);
+      streamer.run("./spec/fixtures/four_line.file");
+      
+    });
+
   });
 });
 
