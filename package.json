@@ -1,0 +1,25 @@
+{
+  "author": "Jakub Oboza <jakub.oboza@gmail.com> (http://no-fucking-idea.com)",
+  "name": "future_toons",
+  "description": "utf-8 text files stream processing tool",
+  "version": "0.0.1",
+  "homepage": "http://no-fucking-idea.com",
+  "repository": {
+    "url": "https://github.com/JakubOboza/future_toons"
+  },
+  "main": "toons.js",
+  "scripts": {
+    "test": "mocha -R landing spec/*.spec.js"
+  },
+  "dependencies": {
+
+    },
+  "devDependencies": {
+    "should": ">= 0.6.3",
+    "mocha": ">= 1.0.2"
+    },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
